@@ -31,3 +31,5 @@ int modificarDuenio(sDuenio duenio[], int tamD, int ocupado);
 
 void promediodevaronesYMujeres(sDuenio duenio[], int tamD, int ocupado);
 
+void porcentajeMujeres(sDuenio duenio[], int tamD, int ocupado);
+

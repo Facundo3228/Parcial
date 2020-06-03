@@ -59,14 +59,16 @@ int main()
         printf("\t\t| (17) PROMEDIO DE EDADES DE LAS MASCOTAS POR TIPO                               \t\t|\n");
         printf("\t\t| (18) PROMEDIO DE LOS CLIENTES HOMBRES Y MUJERES                                \t\t|\n");
 
+        printf("\t\t| (1818) PORCENTAJE DE MUJERES SOBRE EL TOTAL DE CLIENTES                        \t\t|\n");
+        printf("\t\t| (19) MOSTRAR LOS CLIENTES QUE TIENEN MASCOTAS DEL MISMO SEXO                   \t\t|\n");
 
-        printf("\t\t| (19) SALIR                                                                     \t\t|\n");
+        printf("\t\t| (20) SALIR                                                                     \t\t|\n");
         printf("\t\t_________________________________________________________________________________________________\t\t\n\t\t|");
         fflush(stdin);
         //__fpurger(stdin);
 
         eleccion = getInt(" ELIJA UNA OPCION DEL MENU: ",
-                          "\t\t|\n\t\t| ELIJA UNA OPCION DEL MENU: ", 1, 19, 1);
+                          "\t\t|\n\t\t| ELIJA UNA OPCION DEL MENU: ", 1, 2000, 1);
         system("clear");
         switch(eleccion)
         {
@@ -199,15 +201,29 @@ int main()
             break;
         }
 
-
+        case 1818:
+        {
+            porcentajeMujeres(duenio, TAMD, OCUPADO);
+            system("pause");
+            break;
+        }
         case 19:
+        {
+            mostrarMascotaDuenioMismoSexo(mascota, TAMM, duenio, TAMD, raza, TAMR, OCUPADO);
+            system("pause");
+            break;
+        }
+        case 20:
         {
             printf("Hasta la proxima!");
             break;
         }
+        default:
+            printf("\nOPCION NO IMPLEMENTADA...\n");
+            break;
         }
     }
-    while(eleccion!=19);
+    while(eleccion != 20);
 
     return 0;
 }

@@ -142,3 +142,61 @@
 	"raza.h"
 	"harryio.h"
 
+1591163913 source:c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\dueño.c
+	"dueño.h"
+	"harryio.h"
+
+1591156357 c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\dueño.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"harryio.h"
+
+1589846360 c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\harryio.h
+
+1589846360 source:c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\harryio.c
+	<stdio.h>
+	<string.h>
+	"harryio.h"
+
+1590971348 source:c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\mascota.c
+	"mascota.h"
+
+1591024226 c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\mascota.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"harryio.h"
+
+1590970779 source:c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\mascota_dueño.c
+	"mascota_dueño.h"
+
+1591166173 c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\mascota_dueño.h
+	"mascota.h"
+	"dueño.h"
+	"raza.h"
+	"harryio.h"
+
+1590879875 c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\raza.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"harryio.h"
+
+1591022053 source:c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\mascota_raza.c
+	"mascota_raza.h"
+
+1590971218 c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\mascota_raza.h
+	"mascota.h"
+	"raza.h"
+	"harryio.h"
+
+1590952025 source:c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\raza.c
+	"raza.h"
+
+1591166173 source:c:\users\esteb\desktop\mis repositorios de github\parcial\practicamascotadueño\main.c
+	<stdio.h>
+	<stdlib.h>
+	"mascota_dueño.h"
+	"harryio.h"
+

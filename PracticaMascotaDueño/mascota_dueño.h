@@ -33,4 +33,6 @@ int altaMascotaDuenioRaza(sMascota mascota[], int tamMascota, sDuenio duenio[], 
 
 int modificarMascotaRazaDuenio(sMascota mascota[], int tamMascota, sDuenio duenio[], int tamDuenio, sRaza raza[], int tamRaza,  int ocupado);
 
+void mostrarMascotaDuenioMismoSexo(sMascota mascota[], int tamMascota, sDuenio duenio[], int tamDuenio, sRaza raza[], int tamRaza, int ocupado);
+
 

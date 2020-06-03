@@ -317,7 +317,7 @@ int modificarDuenio(sDuenio duenio[], int tamD, int ocupado)
     return retorno;
 }
 
-//PENDIENTE
+//PROMEDIO DE HOMBRES Y MUJERES (18)
 void promediodevaronesYMujeres(sDuenio duenio[], int tamD, int ocupado)
 {
     int i;
@@ -344,11 +344,40 @@ void promediodevaronesYMujeres(sDuenio duenio[], int tamD, int ocupado)
     sumaToal = contadorSexoM + contadorSexoF;
 
     promedioM = (float) sumaToal / contadorSexoM;
-    printf("\nEL PROMEDIO DE MUJERES ES: ( %d / %d = %.2f )\n ",sumaToal, contadorSexoM, promedioM);
+    printf("\nEL PROMEDIO DE HOMBRES ES: (%d / %d = %.2f )\n ", sumaToal, contadorSexoM, promedioM);
     promedioF = (float) sumaToal / contadorSexoF;
-    printf("\nEL PROMEDIO DE MUJERES ES: (%d / %d = %.2f )\n ",sumaToal, contadorSexoF, promedioF);
+    printf("\nEL PROMEDIO DE MUJERES ES: (%d / %d = %.2f )\n ", sumaToal, contadorSexoF, promedioF);
 
 }
+
+
+//PORCENTAJE DE MUJERES SOBRE EL TOTAL DE CLIENTES (1818)
+void porcentajeMujeres(sDuenio duenio[], int tamD, int ocupado)
+{
+    int i;
+
+    int contadorSexoF = 0;
+    int contadorTotal = 0;
+    float porcentajeF;
+
+
+    for(i = 0; i < tamD; i++)
+    {
+        if(duenio[i].estado == ocupado)
+        {
+            contadorTotal++;
+            if(strcmp(duenio[i].sexo, "FEMENINO") == 0)
+            {
+                contadorSexoF++;
+            }
+        }
+
+    }
+    porcentajeF = (float)(contadorSexoF * contadorTotal) / 100;
+
+    printf("\nEL PORCENTAJE DE MUJERES ES: ( (%d * %d) / 100 ) = %.2f \n ", contadorSexoF, contadorTotal, porcentajeF);
+}
+
 
 
 

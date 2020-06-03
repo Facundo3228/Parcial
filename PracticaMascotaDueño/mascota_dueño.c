@@ -856,7 +856,106 @@ int modificarMascotaRazaDuenio(sMascota mascota[], int tamMascota, sDuenio dueni
     return retorno;
 }
 
+//MUESTRA LOS DUENIOS CON QUE TIENEN MASCOTAS DEL MISMO SEXO. (19)
+void mostrarMascotaDuenioMismoSexo(sMascota mascota[], int tamMascota, sDuenio duenio[], int tamDuenio, sRaza raza[], int tamRaza, int ocupado)
+{
+    int i, j, k;
+    int opcion;
+    char auxSexoDuenio[50];
+    char auxSexoMascota[50];
+    do
+                {
+                    printf("\n\n\t\t>>>>> MENU SEXO DE DUENIO <<<<<<<<\n\n");
+                    printf("\t\t___________________________________\t\t\n");
+                    printf("\t\t| (1) MASCULINO         \t\t|\n");
+                    printf("\t\t| (2) FEMENINO          \t\t|\n");
+                    printf("\t\t___________________________________\t\t\n\t\t|");
+                    fflush(stdin);
+                    //__fpurger(stdin);
 
+                    opcion = getInt(" ELIJA UNA OPCION DEL MENU: ",
+                                    "\t\t|\n\t\t| ELIJA UNA OPCION DEL MENU: ", 1, 3, 1);
+                    system("clear");
+
+                    switch(opcion)
+                    {
+                    case 1:
+                    {
+                        system("clear");
+                        strcpy(auxSexoDuenio, "MASCULINO");
+                        strcpy(auxSexoMascota, "MACHO");
+                        break;
+                    }
+                    case 2:
+                    {
+                        system("clear");
+                        strcpy(auxSexoDuenio, "FEMENINO");
+                        strcpy(auxSexoMascota, "HEMBRA");
+                        break;
+                    }
+
+                    default:
+                        printf("\t\t\n OPCION NO IMPLEMENTADA ELIJA UNA OPCION DEL MENU");
+                        system("pause");
+                        break;
+                    }
+
+                }
+                while(opcion != 1 && opcion != 2);
+
+
+    for(i = 0; i < tamDuenio; i++)
+    {
+
+        if(duenio[i].estado == ocupado && strcmpi(duenio[i].sexo, auxSexoDuenio) == 0)
+        {
+            printf("\n\n\t\t>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> DUENIOS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+            printf("\t\t_____________________________________________________________________________________\t\t\n");
+            printf("\n\t\t| N \tID \tNOMBRE\t APELLIDO\t LOCALIDAD\t TELEFONO\t SEXO |\n");
+            printf("\t\t_____________________________________________________________________________________\t\t\n");
+            printf("%19d %6d %11s %10s %16s %14s %11s\n",
+                   i+1,
+                   duenio[i].idDuenio,
+                   duenio[i].nombre,
+                   duenio[i].apellido,
+                   duenio[i].localidad,
+                   duenio[i].telefono,
+                   duenio[i].sexo
+                  );
+
+            printf("\n\t\t>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MASCOTAS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+            printf("\t\t_____________________________________________________________________________________\t\t\n");
+            printf("\n\t\t| N          NOMBRE\t  TIPO             RAZA \tPAIS \tEDAD \tPESO \tSEXO|\n");
+            printf("\t\t_____________________________________________________________________________________\t\t\n");
+
+            for(j=0; j<tamMascota; j++)
+            {
+
+                if(mascota[j].estado == ocupado && mascota[j].idDuenio == duenio[i].idDuenio && strcmpi(mascota[j].sexo, auxSexoMascota) == 0)
+                {
+                    for(k = 0; k < tamRaza; k++)
+                    {
+                        if(raza[k].estado == ocupado && mascota[j].idRaza == raza[k].idRaza)
+                        {
+                            printf("%19d %15s %10s %16s %12s %7d %7.2f %7s\n",
+                                   j+1,
+                                   mascota[j].nombre,
+                                   mascota[j].tipo,
+                                   raza[k].nombreRaza,
+                                   raza[k].pais,
+                                   mascota[j].edad,
+                                   mascota[j].peso,
+                                   mascota[j].sexo);
+
+                        }
+                    }
+
+                    printf("\t\t_____________________________________________________________________________________\t\t\n");
+                }
+            }
+        }
+    }
+}
 
 
 
